@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GvG Report</title>
+  <meta charset="UTF-8">
+</head>
+<meta name="author" content="GOUBERT Thibault">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.14/css/bootstrap-select.min.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.14/js/bootstrap-select.min.js"></script>
+
+
+<style>
+  .checkbox-xl {
+    top: 1.2rem;
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+
+  *:not([type=text]):not(#textarea-report){
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+  <!--Header-->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <h2>Générateur de rapport</h2>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Adversaire name -->
+      <tr>
+        <td>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="label-adversaire">Adversaire</span>
+            </div>
+            <input id="adversaireName" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--Tour 1-->
+  <table>
+    <!-- Ma team -->
+    <table class="table table-striped">
+      <h5>Tour 1</h5>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Héros 1</th>
+          <th scope="col">Speed</th>
+          <th scope="col">Héros 2</th>
+          <th scope="col">Héros 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ma team</td>
+          <td>
+            <select id="tour1-my-hero1" class="selectpickerHeroes"  data-live-search="true">
+            </select>
+          </td>
+          <td>
+            <input id="tour1-my-speed" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <select id="tour1-my-hero2" class="selectpickerHeroes"  data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour1-my-hero3" class="selectpickerHeroes"  data-live-search="true"></select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--Team adverse-->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Héros</th>
+          <th scope="col">artifact</th>
+          <th scope="col">PV</th>
+          <th scope="col">Speed %</th>
+          <th scope="col">Immu</th>
+          <th scope="col">Counter</th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row" rowspan="3">Team adverse</td>
+          <td>
+            <select id="tour1-ad-hero1" class="selectpickerHeroes" data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour1-ad-artifact1" class="selectpickerArtifacts" data-live-search="true"></select>
+          </td>
+          <td>
+            <input id="tour1-ad-hp1" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour1-ad-speed1" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour1-ad-immunity1" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour1-ad-counter1" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour1-ad-notes1" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select id="tour1-ad-hero2" class="selectpickerHeroes" data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour1-ad-artifact2" class="selectpickerArtifacts" data-live-search="true"></select>
+          </td>
+          <td>
+            <input id="tour1-ad-hp2" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour1-ad-speed2" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour1-ad-immunity2" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour1-ad-counter2" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour1-ad-notes2" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select id="tour1-ad-hero3" class="selectpickerHeroes" data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour1-ad-artifact3" class="selectpickerArtifacts" data-live-search="true"></select>
+          </td>
+          <td>
+            <input id="tour1-ad-hp3" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour1-ad-speed3" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour1-ad-immunity3" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour1-ad-counter3" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour1-ad-notes3" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </table>
+
+  <!--Tour 2-->
+  <table>
+    <!-- Ma team -->
+    <table class="table table-striped">
+      <h5>Tour 2</h5>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Héros 1</th>
+          <th scope="col">Speed</th>
+          <th scope="col">Héros 2</th>
+          <th scope="col">Héros 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ma team</td>
+          <td>
+            <select id="tour2-my-hero1" class="selectpickerHeroes"  data-live-search="true">
+            </select>
+          </td>
+          <td>
+            <input id="tour2-my-speed" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <select id="tour2-my-hero2" class="selectpickerHeroes"  data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour2-my-hero3" class="selectpickerHeroes"  data-live-search="true"></select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--Team adverse-->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Héros</th>
+          <th scope="col">artifact</th>
+          <th scope="col">PV</th>
+          <th scope="col">Speed %</th>
+          <th scope="col">Immu</th>
+          <th scope="col">Counter</th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row" rowspan="3">Team adverse</td>
+          <td>
+            <select id="tour2-ad-hero1" class="selectpickerHeroes" data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour2-ad-artifact1" class="selectpickerArtifacts" data-live-search="true"></select>
+          </td>
+          <td>
+            <input id="tour2-ad-hp1" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour2-ad-speed1" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour2-ad-immunity1" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour2-ad-counter1" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour2-ad-notes1" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select id="tour2-ad-hero2" class="selectpickerHeroes" data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour2-ad-artifact2" class="selectpickerArtifacts" data-live-search="true"></select>
+          </td>
+          <td>
+            <input id="tour2-ad-hp2" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour2-ad-speed2" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour2-ad-immunity2" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour2-ad-counter2" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour2-ad-notes2" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select id="tour2-ad-hero3" class="selectpickerHeroes" data-live-search="true"></select>
+          </td>
+          <td>
+            <select id="tour2-ad-artifact3" class="selectpickerArtifacts" data-live-search="true"></select>
+          </td>
+          <td>
+            <input id="tour2-ad-hp3" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour2-ad-speed3" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+          <td>
+            <input id="tour2-ad-immunity3" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour2-ad-counter3" class="checkbox-xl" type="checkbox" aria-label="Checkbox for following text input">
+          </td>
+          <td>
+            <input id="tour2-ad-notes3" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </table>
+
+  <!--Générateur-->
+  <table class="table">
+    <tbody>
+      <tr>
+        <button type="button" class="btn btn-success" id="btnGenerate"">Générer</button>
+        <button type=" button" class="btn btn-primary" id="btnCopy">Copy</button>
+        <button type="button" class="btn btn-secondary" id="btnClean">Vider</button>
+      </tr>
+      <tr>
+        <textarea class="form-control" id="textarea-report" rows="12"></textarea>
+      </tr>
+      <tr>
+        <textarea style="resize:none" class="form-control" id="textarea-info" rows="12" readonly>
+          Attention, les indications de speed calculées par le générateur ne sont valables que si votre héros joue en premier. Il faut alors entrer les pourcentages indiqués dans l'écran accessible depuis le sablier.
+          Dans le cas où vous vous faites outspeed, le calcul de vitesse ne peut pas se faire et vous devez alors utilisé le champ "Notes" pour donner des indications de vitesse basées sur les vitesses de vos persos.
+          Précision supplémentaire : pensez à ajouter les bonus de speed liés à vos imprints sur la speed de votre héros principal.
+        </textarea>
+      </tr>
+    </tbody>
+  </table>
+
+
+ <!--Javascript (thx captain obvious)-->
+ <script>
+  $(document).ready(function () {
+    //Get heroes
+    var heroes = (function () {
+      var json = null;
+      $.ajax({
+        'async': false,
+        'global': false,
+        'url': 'https://api.epicsevendb.com/hero',
+        'dataType': "json",
+        'success': function (data) {
+          json = data;
+        }
+      });
+      return json;
+    })();
+
+    //Get artifacts
+    var artifacts = (function () {
+      var json = null;
+      $.ajax({
+        'async': false,
+        'global': false,
+        'url': 'https://api.epicsevendb.com/artifact',
+        'dataType': "json",
+        'success': function (data) {
+          json = data;
+        }
+      });
+      return json;
+    })();
+
+    //Set heroes listes
+    $('.selectpickerHeroes').append( $('<option data-tokens="empty">Nothing selected</option>'));
+    $.each(heroes['results'], function (idx, hero) {
+      console.log();
+      $('.selectpickerHeroes').append( $('<option data-tokens="' + hero._id + '" data-content="<img src='+hero['assets'].icon+'></img>' + hero.name + '">' + hero.name + '</option>'));
+    });
+    $(".selectpickerHeroes").selectpicker();
+
+    //Set artifacts listes
+    $('.selectpickerArtifacts').append( $('<option data-tokens="empty">Nothing selected</option>'));
+    $.each(artifacts['results'], function (idx, arte) {
+      $('.selectpickerArtifacts').append($('<option data-tokens="' + arte._id + '" data-content="<img src='+arte['assets'].icon+'></img>' + arte.name + '">' + arte.name + '</option>'));
+    });    
+    $('.selectpickerArtifacts').selectpicker();
+
+    //Boutton générer
+    $('#btnGenerate').click(function(){
+      var lineEnd = "\r\n";
+      var result = $('#adversaireName').val().boldOnDiscord().underlineOnDiscord() + lineEnd;
+      //Construction des infos tour 1      
+      result += 'Tour 1:'.boldOnDiscord() + lineEnd;
+      result += MyTeam(1) + lineEnd;
+      result += HeroInfo(1,1) + lineEnd;
+      result += HeroInfo(1,2) + lineEnd;
+      result += HeroInfo(1,3) + lineEnd;
+      //Construction des infos tour 2      
+      result += 'Tour 2:'.boldOnDiscord() + lineEnd;
+      result += MyTeam(2) + lineEnd;
+      result += HeroInfo(2,1) + lineEnd;
+      result += HeroInfo(2,2) + lineEnd;
+      result += HeroInfo(2,3) + lineEnd;
+      $('#textarea-report').val(result);
+    });
+
+    //String format for discord
+    String.prototype.boldOnDiscord = function(){
+      return "**" + this + "**";
+    } 
+    String.prototype.underlineOnDiscord = function(){
+      return '__' + this + '__';
+    } 
+    //Farmat infos
+    function MyTeam(tourIdx){
+      var res = 'Ma team: ' +
+        $('#tour'+tourIdx+'-my-hero1 option:selected').val() +
+        '('  + $('#tour'+tourIdx+'-my-speed').val() + ' speed),' +
+        ' '  + $('#tour'+tourIdx+'-my-hero2 option:selected').val() +
+        ', ' + $('#tour'+tourIdx+'-my-hero3 option:selected').val();
+      return res;
+    }
+    function HeroInfo(tourIdx, heroIdx){
+      var lineStartDiscord = '> - ';
+      var res = lineStartDiscord +
+      $('#tour'+tourIdx+'-ad-hero'+heroIdx+' option:selected').val() + ' / ' +
+      'Arte:'.underlineOnDiscord() + ' ' + $('#tour'+tourIdx+'-ad-artifact'+heroIdx+' option:selected').val() + ' / ' +
+      'PV:'.underlineOnDiscord() + ' ' + $('#tour'+tourIdx+'-ad-hp'+heroIdx).val() + ' / ';
+      var speedRef = parseInt($('#tour'+tourIdx+'-my-speed').val());
+      var speed = parseInt($('#tour'+tourIdx+'-ad-speed'+heroIdx).val());
+      var minSpeed = Math.round((0.95*0.95*speedRef)/100*speed)+1;
+      var maxSpeed = Math.round((1.05*1.05*speedRef)/100*speed)+1;
+      res += 'Speed:'.underlineOnDiscord() + ' ' + minSpeed + '-' + maxSpeed +  ' / ';
+      if($('#tour'+tourIdx+'-ad-immunity'+heroIdx).is(':checked')){ res += 'Set Immu'.boldOnDiscord() + ' / '; }
+      if($('#tour'+tourIdx+'-ad-counter'+heroIdx).is(':checked')){ res += 'Set Counter'.boldOnDiscord()+ ' / '; }
+      res += 'Notes:'.underlineOnDiscord() + ' ' + $('#tour'+tourIdx+'-ad-notes'+heroIdx).val();
+      return res;
+    }  
+  
+  });
+
+</script>
+
+</body>
+
+</html>
